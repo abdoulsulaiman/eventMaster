@@ -34,23 +34,23 @@ class RegistrationSerializer(serializers.Serializer):
     def create(self):
         
             client = Client()
-            client.firstName=self.validated_data.pop("firstName")
-            client.lastName=self.validated_data.pop("lastName")
-            client.phone = self.validated_data.pop('phone_number')
-            client.email = self.validated_data.pop('email')
-            client.gender=self.validated_data.pop('gender')
-            client.birth_date=self.validated_data.pop('dob')
+            client.firstName=self.validated_data.get("firstName")
+            client.lastName=self.validated_data.get("lastName")
+            client.phone = self.validated_data.get('phone_number')
+            client.email = self.validated_data.get('email')
+            client.gender=self.validated_data.get('gender')
+            client.birth_date=self.validated_data.get('dob')
             client.category="Client"
             client.save()
         
 
             new_user=User()
-            new_user.first_name=self.validated_data.pop("firstName")
-            new_user.last_name=self.validated_data.pop("lastName")
-            new_user.email=self.validated_data.pop('email')
-            new_user.phone_number=self.validated_data.pop('phone_number')
-            new_user.username=self.validated_data.pop('user_name')
-            new_user.set_password(self.validated_data.pop('password'))
+            new_user.first_name=self.validated_data.get("firstName")
+            new_user.last_name=self.validated_data.get("lastName")
+            new_user.email=self.validated_data.get('email')
+            new_user.phone_number=self.validated_data.get('phone_number')
+            new_user.username=self.validated_data.get('user_name')
+            new_user.set_password(self.validated_data.get('password'))
             new_user.has_set_password=True
             new_user.referenceId=client.pk
             new_user.is_admin=True
