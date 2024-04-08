@@ -148,12 +148,12 @@ OAUTH2_PROVIDER = {
     'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
 }
 
-# EMAIL_HOST = env('ACC_EMAIL_HOST')
-# EMAIL_PORT = env('ACC_EMAIL_PORT')
-# EMAIL_HOST_USER = env('ACC_EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = env('ACC_EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS = True
-# EMAIL_TIMEOUT = 30000
+EMAIL_HOST = os.environ.get('ACC_EMAIL_HOST')
+EMAIL_PORT = os.environ.get('ACC_EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('ACC_EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('ACC_EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+EMAIL_TIMEOUT = 30000
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -181,8 +181,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ID_ENCRYPT_KEY = env('ID_ENCRYPT_KEY')
-# FRONTEND_PROJECT_URL = env('FRONTEND_PROJECT_URL')
+ID_ENCRYPT_KEY = os.environ.get('ID_ENCRYPT_KEY')
+FRONTEND_PROJECT_URL = os.environ.get('FRONTEND_PROJECT_URL')
 
 
 # Internationalization
