@@ -23,5 +23,8 @@ urlpatterns = [
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('api/', include('user_management.urls.client_urls')),
     path('api/',include('event.urls.package_urls')),
-    path('api/',include('event.urls.event_urls'))
+    path('api/',include('event.urls.event_urls')),
+    path('api/',include('event.urls.event_type_urls')),
+    path('api/',include('event.urls.package_activity_urls')),
+    path('api/',include('event.urls.activity_urls'))
 ]
